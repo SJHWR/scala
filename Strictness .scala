@@ -1,16 +1,18 @@
-object Main {
+object Strictness {
   def main(args: Array[String]): Unit = {
-    def lessThan100(i: Int): Boolean = {
-      println(s"$i less than 100?")
-      i < 100
+    def lessThanOneHundred(num: Int): Boolean = {
+      println(s"$num less than 100?")
+      num < 100
     }
-    def moreThan10(i: Int): Boolean = {
-      println(s"$i more than 10？")
-      i > 10
+    def greaterThanTen(num: Int): Boolean = {
+      println(s"$num more than 10?")
+      num > 10
     }
-    val a = List(1, 255, 40, 6, 23)
-    val q0 = a.filter(lessThan100); println("")
-    val q1 = q0.filter(moreThan10); println("")
-    for (r <- q1) println(s"$r")
+    val numbers = List(1, 255, 40, 6, 23)
+    val filteredLessThanHundred = numbers.filter(lessThanOneHundred); println("")
+    val filteredGreaterThanTen = filteredLessThanHundred.filter(greaterThanTen); println("")
+    for (number <- filteredGreaterThanTen) println(s"$number")
   }
+
+
 }
